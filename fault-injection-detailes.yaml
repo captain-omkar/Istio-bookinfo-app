@@ -6,26 +6,24 @@ spec:
   hosts:
   - details
   http:
-  # - fault:
-  #     abort:
-  #       httpStatus: 555
-  #       percentage:
-  #         value: 100
+  - fault:
+      abort:
+        httpStatus: 555
+        percentage:
+          value: 100
   # - fault:
   #     delay:
   #       percentage:
   #         value: 70.0
   #       fixedDelay: 5s
-  
+    route:
+    - destination:
+        host: details
+        subset: v1
   - route:
     - destination:
         host: details
         subset: v1
-      weight: 100
-  # - route:
-  #   - destination:
-  #       host: details
-  #       subset: v1
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
