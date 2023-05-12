@@ -10,17 +10,17 @@ spec:
     - destination:
         host: reviews
         subset: v1
-      weight: 100
-    mirror:
-      host: reviews
-      subset: v2
-    mirrorPercentage:
-      value: 20.0
-    # - destination:
-    #     host: reviews
-    #     subset: v2
-    #   weight: 20
-    # - destination:
-    #     host: reviews
-    #     subset: v3
-    #   weight: 30
+      weight: 50
+#     mirror:
+#       host: reviews
+#       subset: v2
+#     mirrorPercentage:
+#       value: 20.0
+    - destination:
+        host: reviews
+        subset: v2
+      weight: 20
+    - destination:
+        host: reviews
+        subset: v3
+      weight: 30
